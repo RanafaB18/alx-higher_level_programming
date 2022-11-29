@@ -9,7 +9,11 @@ int check_cycle(listint_t *list)
 {
 	listint_t *head = list;
 	listint_t *temp = list;
-
+	
+	if (!list)
+	{
+		return (0);
+	}
 	while (temp->next != NULL)
 	{
 		if (temp->next == head)
