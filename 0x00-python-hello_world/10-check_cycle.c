@@ -10,7 +10,7 @@ int check_cycle(listint_t *list)
 	listint_t *head = list;
 	listint_t *temp = list;
 	
-	if (!list)
+	if (!list && !head && !temp)
 	{
 		return (0);
 	}
