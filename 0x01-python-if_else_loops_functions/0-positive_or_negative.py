@@ -6,5 +6,5 @@ if number > 0:
 elif number < 0:
     sign = "is negative"
 else:
-    sign = "is zero"sign = "is zero"
+    sign = "is zero"
 print(f"{number} {sign}")
