@@ -14,4 +14,4 @@ if __name__ == "__main__":
         exit(1)
     a = int(argv[1])
     b = int(argv[3])
-    print("{} + {} = {}".format(a, b, a + b))
+    print("{:d} + {:d} = {:d}".format(a, b, a + b))
