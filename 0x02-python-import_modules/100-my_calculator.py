@@ -14,4 +14,6 @@ if __name__ == "__main__":
         exit(1)
     a = int(argv[1])
     b = int(argv[3])
-    print("{:d} + {:d} = {:d}".format(a, b, a + b))
+    operator_funcs = [add, sub, mul, div]
+    func = operator_funcs[operators.index(operator)]
+    print("{} {} {} = {}".format(a, operator, b, func(a, b)))
