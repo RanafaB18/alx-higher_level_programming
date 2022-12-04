@@ -21,7 +21,7 @@ int is_palindrome(listint_t **head)
 	{
 		var[i - 1] = temp->n;
 		i++;
-		realloc(var, sizeof(int) * i);
+		var = realloc(var, sizeof(int) * i);
 		temp = temp->next;
 	}
 
