@@ -1,5 +1,9 @@
 #include "lists.h"
-
+/**
+ * is_palindrome - Checks if a linked list is palindromic
+ * @head: head oflinkedlist
+ * Return: 1 if palindromic else 0
+ */
 int is_palindrome(listint_t **head)
 {
 	listint_t *temp = *head;
@@ -8,11 +12,6 @@ int is_palindrome(listint_t **head)
 	int j;
 	int arrayLength;
 	var = malloc(sizeof(int));
-	if (!var)
-	{
-		return 0;
-	}
-
 	if (!head)
 	{
 		return 1;
