@@ -1,6 +1,10 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
-print_reversed_list_integer = __import__('3-print_reversed_list_integer').print_reversed_list_integer
+new_in_list = __import__('4-new_in_list').new_in_list
 
 my_list = []
-print_reversed_list_integer(my_list)
+idx = 3
+new_element = 9
+new_list = new_in_list(my_list, idx, new_element)
+
+print(new_list)
+print(my_list)
