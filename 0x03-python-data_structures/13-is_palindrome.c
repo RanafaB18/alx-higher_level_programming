@@ -11,10 +11,11 @@ int is_palindrome(listint_t **head)
 	int i = 1;
 	int j;
 	int arrayLength;
+
 	var = malloc(sizeof(int));
 	if (!head)
 	{
-		return 1;
+		return (1);
 	}
 	while (temp)
 	{
@@ -30,10 +31,10 @@ int is_palindrome(listint_t **head)
 	{
 		if (var[i] != var[j])
 		{
-			return 0;
+			return (0);
 		}
 		i++;
 	}
-	return 1;
+	return (1);
 }
 
