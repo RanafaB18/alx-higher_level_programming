@@ -15,6 +15,7 @@ int is_palindrome(listint_t **head)
 	var = malloc(sizeof(int));
 	if (!head)
 	{
+		free(var);
 		return (1);
 	}
 	while (temp)
@@ -31,10 +32,12 @@ int is_palindrome(listint_t **head)
 	{
 		if (var[i] != var[j])
 		{
+			free(var);
 			return (0);
 		}
 		i++;
 	}
+	free(var);
 	return (1);
 }
 
