@@ -1,71 +1,58 @@
 #include "lists.h"
-
 /**
- * reverse_listint - reverses a linked list
- * @head: pointer to the first node in the list
- * Return: pointer to the first node in the new list
- */
-void reverse_listint(listint_t **head)
+  * insertAtHead - inserts nodes at head of linked list
+  * @head: head of linked list
+  * @value: value of new node
+  * Return : new head if no error else NULL
+  */
+
+listint_t *insertAtHead(listint_t **head, int value)
 {
-	listint_t *prev = NULL;
-	listint_t *current = *head;
-	listint_t *next = NULL;
-
-	while (current)
+	listint_t *newNode = malloc(sizeof(listint_t));
+	if (!newNode)
 	{
-		next = current->next;
-		current->next = prev;
-		prev = current;
-		current = next;
+		return (NULL);
 	}
-
-	*head = prev;
+	newNode->n = value;
+	newNode->next = NULL;
+	if (!*head)
+	{
+		*head = newNode;
+		return (*head);
+	}
+	newNode->next = *head;
+	*head = newNode;
+	return (*head);
 }
-
 /**
- * is_palindrome - checks if a linked list is a palindrome
- * @head: double pointer to the linked list
- *
- * Return: 1 if it is, 0 if not
- */
+  * is_palindrome - Checks if a linked list is palindromic
+  * @head: head of linked list
+  * Return: 0 if its not palindromic else 1
+  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL;
+	listint_t *temp = *head;
+	listint_t *newHead = NULL;
+	listint_t *tempHead;
 
-	if (*head == NULL || (*head)->next == NULL)
-		return (1);
-
-	while (1)
+	while (temp)
 	{
-		fast = fast->next->next;
-		if (!fast)
-		{
-			dup = slow->next;
-			break;
-		}
-		if (!fast->next)
-		{
-			dup = slow->next->next;
-			break;
-		}
-		slow = slow->next;
+		insertAtHead(&newHead, temp->n);
+		temp = temp->next;
 	}
-
-	reverse_listint(&dup);
-
-	while (dup && temp)
+	temp = *head;
+	tempHead = newHead;
+	while (tempHead && temp)
 	{
-		if (temp->n == dup->n)
+		if (tempHead->n != temp->n)
 		{
-			dup = dup->next;
-			temp = temp->next;
-		}
-		else
+			free_listint(newHead);
 			return (0);
+		}
+		tempHead = tempHead->next;
+		temp = temp->next;
 	}
-
-	if (!dup)
-		return (1);
-
-	return (0);
+	free_listint(newHead);
+	return (1);
 }
+
