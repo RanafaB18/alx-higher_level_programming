@@ -3,12 +3,13 @@
   * insertAtHead - inserts nodes at head of linked list
   * @head: head of linked list
   * @value: value of new node
-  * Return : new head if no error else NULL
+  * Return: new head if no error else NULL
   */
 
 listint_t *insertAtHead(listint_t **head, int value)
 {
 	listint_t *newNode = malloc(sizeof(listint_t));
+
 	if (!newNode)
 	{
 		return (NULL);
@@ -35,6 +36,10 @@ int is_palindrome(listint_t **head)
 	listint_t *newHead = NULL;
 	listint_t *tempHead;
 
+	if (*head == NULL)
+	{
+		return (1);
+	}
 	while (temp)
 	{
 		insertAtHead(&newHead, temp->n);
