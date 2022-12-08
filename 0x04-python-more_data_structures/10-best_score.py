@@ -7,5 +7,5 @@ def best_score(a_dictionary):
                 maximum = value
                 max_key = key
     else:
-	 return None
+        return None
     return max_key
