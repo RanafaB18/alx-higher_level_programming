@@ -3,11 +3,10 @@ def safe_print_list(my_list=[], x=0):
     try:
         count = 0
         while (count < x):
-            print(f"{my_list[i]}", end="")
+            print(f"{my_list[count]}", end="")
             count = count + 1
-            print(count)
-        print()
-    except IndexError:
+    except:
         raise IndexError
     finally:
+        print()
         return count
