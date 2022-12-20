@@ -11,3 +11,5 @@ def safe_function(fct, *args):
         print("Exception: {}".format(err.args[0]), file=sys.stderr)
     except ValueError as err:
         print("Exception: {}".format(err.args[0]), file=sys.stderr)
+    except TypeError as err:
+        print("Exception: {}".format(err.args[0]), file=sys.stderr)
