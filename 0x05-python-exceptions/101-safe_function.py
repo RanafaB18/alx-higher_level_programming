@@ -9,3 +9,5 @@ def safe_function(fct, *args):
         print("Exception: {}".format(err.args[0]), file=sys.stderr)
     except IndexError as err:
         print("Exception: {}".format(err.args[0]), file=sys.stderr)
+    except ValueError as err:
+        print("Exception: {}".format(err.args[0]), file=sys.stderr)
