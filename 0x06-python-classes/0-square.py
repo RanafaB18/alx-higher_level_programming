@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+"""A Square class"""
 class Square:
-    """A Square class"""
+    """Does nothing"""
     pass
