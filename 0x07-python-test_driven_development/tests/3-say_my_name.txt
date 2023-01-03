@@ -1,0 +1,52 @@
+The ``3-say_my_name`` module
+============================
+
+Using ``say_my_name`` function
+------------------------------
+
+Importing ``say_my_name``:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Passing two names:
+    >>> say_my_name("Cadis", "Etrama Di Raizel")
+    My name is Cadis Etrama Di Raizel
+
+Passing an integer:
+    >>> say_my_name(3, "fisher")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+Passing a float:
+    >>> say_my_name("Dan", 3.0)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+Passing a tuple with strings:
+    >>> say_my_name(("Dan", "Fisher"))
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+Unpacking a tuple into function:
+    >>> say_my_name(*("Dan", "Fisher"))
+    My name is Dan Fisher
+
+Incomplete pass:
+    >>> say_my_name("Dan", "Fisher)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: EOL while scanning string literal
+
+Passing None:
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+Passing a boolean:
+    >>> say_my_name(False)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string

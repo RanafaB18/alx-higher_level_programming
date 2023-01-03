@@ -1,0 +1,44 @@
+The ``5-text_indentation`` module
+=================================
+
+Using ``text_indentation`` function
+-----------------------------------
+
+Import function from module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Passing string:
+    >>> text_indentation("How are you? I'm good")
+    How are you?
+    <BLANKLINE>
+    I'm good
+
+Passing string with leading and trailing spaces:
+    >>> text_indentation("   Text    ")
+    Text
+
+Passing a float:
+    >>> text_indentation(3.0)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Passing nothing:
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Passing None:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Passing delimiter:
+    >>> text_indentation("\n")
+    <BLANKLINE>
+
+Passing empty string:
+    >>> text_indentation("")
+    <BLANKLINE>
