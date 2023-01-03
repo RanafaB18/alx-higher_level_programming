@@ -5,6 +5,14 @@
 
 
 def text_indentation(text):
+    """indent text
+
+    Args:
+        text (str): _description_
+
+    Raises:
+        TypeError: _description_
+    """
     if type(text) != str:
         raise TypeError("text must be a string")
     line = ""
