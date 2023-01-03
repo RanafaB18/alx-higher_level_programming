@@ -50,3 +50,15 @@ Adding two lists
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
+
+Adding two negative numbers
+    >>> add_integer([1, 2], [3, 4])
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Adding two huge numbers
+    >>> add_integer(1e2000, 2e3000)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
