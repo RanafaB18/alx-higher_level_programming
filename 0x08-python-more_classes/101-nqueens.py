@@ -2,27 +2,33 @@
 """Solves the N-queens puzzle"""
 import sys
 
+
 def nqueens(n: int) -> None:
     """
     Solves the N queens problem for an N x N chessboard.
 
     Args:
-        n: the size of the chessboard. Must be an integer greater than or equal to 4.
+        n: the size of the chessboard.
+            Must be an integer greater than or equal to 4.
 
     Returns:
-    - Every possible solution to the N queens problem, one solution per line. Each solution is a list of tuples, where each tuple represents the (row, col) indices of a queen on the chessboard.
+    - Every possible solution to the N queens problem,
+    one solution per line. Each solution is a list of tuples,
+    where each tuple represents the (row, col) indices of a
+    queen on the chessboard.
     """
     def is_safe(board, row, col):
         """
         Determines if it's safe to place a queen at board[row][col].
 
-        Parameters:
+        Args:
             board: the current state of the chessboard
             row: the row index of the position being checked
             col: the column index of the position being checked
 
         Returns:
-            True if it's safe to place a queen at board[row][col], False otherwise.
+            True if it's safe to place a queen at board[row][col],
+            False otherwise.
         """
         # Check if there's a queen in the same column
         for i in range(row):
@@ -49,15 +55,18 @@ def nqueens(n: int) -> None:
 
     def solve(board, row, queens):
         """
-        Solves the N queens problem for the given chessboard and the remaining rows.
+        Solves the N queens problem for the given chessboard and
+        the remaining rows.
 
-        Parameters:
+        Args:
             board: the current state of the chessboard
             row: the index of the first row to consider
-            queens: a list of tuples representing the (row, col) indices of the queens on the chessboard
+            queens: a list of tuples representing the (row, col)
+            indices of the queens on the chessboard
 
         Returns:
-            The indices of the queens for a valid solution to the N queens problem.
+            The indices of the queens for a valid solution to
+            the N queens problem.
         """
         # Base case: all queens have been placed
         if row == n:
@@ -80,7 +89,6 @@ def nqueens(n: int) -> None:
     solve(board, 0, queens)
 
 
-
 def main():
     """main function"""
     if len(sys.argv) != 2:
@@ -98,6 +106,7 @@ def main():
         sys.exit(1)
 
     nqueens(n)
+
 
 if __name__ == "__main__":
     main()
