@@ -1,0 +1,8 @@
+The ``my_list`` module
+=====================
+
+Using the ``lookup`` function
+-----------------------------
+
+Importing function:
+    >>> MyList = __import__("1-my_list").MyList
