@@ -1,0 +1,92 @@
+Test for 7-base_geometry
+========================
+
+Case 1 (importation):
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+Case 2 (object creation):
+    >>> bg = BaseGeometry()
+
+
+Case 3 (valid arguments):
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", 12)
+
+Case 4 (valid arguments):
+    >>> bg.integer_validator("width", 1000)
+
+Case 12 (valid arguments):
+    >>> bg.integer_validator("width", [1, 2, 4][2])
+
+Case 5 (passing 0 and negatives):
+    >>> bg.integer_validator("name", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError: name must be greater than 0
+
+Case 6 (passing 0 and negatives):
+    >>> bg.integer_validator("name", -74)
+    Traceback (most recent call last):
+        ...
+    ValueError: name must be greater than 0
+
+Case 7 (passing different types [string]):
+    >>> bg.integer_validator("name", "-74")
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
+
+Case 8 (passing different types [bool]):
+    >>> bg.integer_validator("name", True)
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
+
+Case 9 (passing different types [list]):
+    >>> bg.integer_validator("name", [1, 2, 3])
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
+
+Case 10 (passing different types [tuple]):
+    >>> bg.integer_validator("name", (1, 2, 3))
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
+
+Case 11 (passing different types [dict]):
+    >>> bg.integer_validator("name", {"name": -75})
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
+
+Case 13 (passing nothing):
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+        ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Case 14 (passing just 1 argument):
+    >>> bg.integer_validator("name")
+    Traceback (most recent call last):
+        ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Case 15 (passing None to 1 argument):
+    >>> bg.integer_validator(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Case 16 (passing None to both arguments):
+    >>> bg.integer_validator(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: None must be an integer
+
+Case 17 (passing None to both arguments):
+    >>> bg.integer_validator("name", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
