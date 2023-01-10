@@ -39,9 +39,6 @@ Checking for class docstring:
     True
 
 Checking for method docstring:
-    >>> mtd = __import__("1-my_list").MyList.area.__doc__
+    >>> mtd = __import__("1-my_list").MyList.print_sorted.__doc__
     >>> len(mtd) > 1
-    True
-    >>> mtd2 = __import__("1-my_list").MyList.integer_validator.__doc__
-    >>> len(mtd2) > 1
     True
