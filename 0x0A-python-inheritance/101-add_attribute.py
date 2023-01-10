@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Defines the add_attribute function"""
-import builtins
 
 
 def add_attribute(obj, key, value):
@@ -14,6 +13,6 @@ def add_attribute(obj, key, value):
     Raises:
         TypeError: if it can't add a new attribute
     """
-    if type(obj) in builtins.__dict__.values():
+    if type(obj) in __builtins__:
         raise TypeError("can't add new attribute")
     setattr(obj, key, value)
