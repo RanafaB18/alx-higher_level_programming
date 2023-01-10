@@ -90,3 +90,15 @@ Case 17 (passing None to both arguments):
     Traceback (most recent call last):
         ...
     TypeError: name must be an integer
+
+Case 18 (running area()):
+    >>> bg.area()
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
+
+Case 18 (passing unnecessary arguments to area()):
+    >>> bg.area("fish")
+    Traceback (most recent call last):
+        ...
+    TypeError: area() takes 1 positional argument but 2 were given
