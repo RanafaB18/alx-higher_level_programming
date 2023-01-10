@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Defines the add_attribute function"""
-
+import builtins
 
 def add_attribute(obj, key, value):
     """Adds new attribute to obj if possible
@@ -13,23 +13,6 @@ def add_attribute(obj, key, value):
     Raises:
         TypeError: if it can't add a new attribute
     """
-    types = [
-        int,
-        float,
-        complex,
-        bool,
-        str,
-        bytes,
-        bytearray,
-        list,
-        tuple,
-        range,
-        set,
-        frozenset,
-        dict,
-        None
-    ]
-    for kind in types:
-        if type(obj) == kind:
-            raise TypeError("can't add new attribute")
+    if type(obj) in builtins.__dict__.values():
+        raise TypeError("can't add new attribute")
     setattr(obj, key, value)
