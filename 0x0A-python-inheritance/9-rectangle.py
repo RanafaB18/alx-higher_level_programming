@@ -20,6 +20,3 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         return (f"[{type(self).__name__}] {self.__width}/{self.__height}")
-
-    def __repr__(self):
-        return (f"[{type(self).__name__}] {self.__width}/{self.__height}")
