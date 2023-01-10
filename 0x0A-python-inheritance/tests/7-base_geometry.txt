@@ -106,4 +106,4 @@ Case 18 (passing unnecessary arguments to area()):
 Case 19 (Checking for module docstring):
     >>> m = __import__("7-base_geometry").__doc__
     >>> len(m) > 1
-    True:
+    True
