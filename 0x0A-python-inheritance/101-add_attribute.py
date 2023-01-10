@@ -2,6 +2,7 @@
 """Defines the add_attribute function"""
 import builtins
 
+
 def add_attribute(obj, key, value):
     """Adds new attribute to obj if possible
 
