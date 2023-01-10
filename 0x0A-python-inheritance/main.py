@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-is_same_class = __import__('2-is_same_class').is_same_class
+inherits_from = __import__('4-inherits_from').inherits_from
 
-a = 1
-if is_same_class(a, int):
-    print("{} is an instance of the class {}".format(a, int.__name__))
-if is_same_class(a, float):
-    print("{} is an instance of the class {}".format(a, float.__name__))
-if is_same_class(a, object):
-    print("{} is an instance of the class {}".format(a, object.__name__))
+a = True
+if inherits_from(a, int):
+    print("{} inherited from class {}".format(a, int.__name__))
+if inherits_from(a, bool):
+    print("{} inherited from class {}".format(a, bool.__name__))
+if inherits_from(a, object):
+    print("{} inherited from class {}".format(a, object.__name__))
