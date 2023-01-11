@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""Defines function 'pascal_triangle'"""
+
 
 def pascal_triangle(n, stack=[]):
+    """Implementation of pascal's triangle"""
     for i in range(1, n + 1):
         if i == 1:
             stack.append([1])
