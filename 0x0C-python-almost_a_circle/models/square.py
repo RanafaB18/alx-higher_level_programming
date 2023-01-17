@@ -27,7 +27,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """String representation of square object"""
-        return f"[{type(self).__name__}] ({self.id}) {self.x}/{self.y} - {self.width}"
+        return (f"[{type(self).__name__}] ({self.id})"
+                f"{self.x}/{self.y} - {self.width}")
 
     def update(self, *args, **kwargs):
         """Update attributes of rectangle object"""
@@ -44,5 +45,5 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        return {'id': getattr(self, "id"), 'x': getattr(self, "x"), 'size': getattr(self, "size"), 'y': getattr(self, "y"),
-        }
+        return {'id': getattr(self, "id"), 'x': getattr(self, "x"),
+                'size': getattr(self, "size"), 'y': getattr(self, "y")}
