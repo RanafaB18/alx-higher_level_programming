@@ -86,7 +86,6 @@ class Base:
                 for obj in list_objs:
                     writer.writerow(obj.to_dictionary())
 
-
     @classmethod
     def load_from_file_csv(cls):
         """Deserializes csv files"""
@@ -101,7 +100,7 @@ class Base:
                 else:
                     fieldnames = ['id', 'size', 'x', 'y']
 
-                attributes_list = csv.DictReader(csvfile, fieldnames=fieldnames)
+                attributes_list = csv.DictReader(csvfile, fieldnames)
                 list_dicts = [dict([k, int(v)] for k, v in d.items())
                               for d in attributes_list]
                 instances.extend([cls.create(**d) for d in list_dicts])
