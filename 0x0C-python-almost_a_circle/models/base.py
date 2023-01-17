@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines the class Base"""
 import json
+import csv
 
 
 class Base:
@@ -64,6 +65,44 @@ class Base:
             instances.extend(
                 [cls.create(**attrs) for attrs in attributes_list]
             )
+        except FileNotFoundError:
+            pass
+        return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = f"{cls.__name__}.csv"
+
+        with open(filename, 'w', encoding='utf-8', newline='') as csvfile:
+            if not list_objs:
+                csvfile.write("[]")
+            else:
+                if cls.__name__ == 'Rectangle':
+                    fieldnames = ['id', 'width', 'height', 'x', 'y']
+                else:
+                    fieldnames = ['id', 'size', 'x', 'y']
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
+
+
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = f"{cls.__name__}.csv"
+
+        attributes_list = []
+        instances = []
+        try:
+            with open(filename, "r", encoding="utf-8", newline='') as csvfile:
+                if cls.__name__ == 'Rectangle':
+                    fieldnames = ['id', 'width', 'height', 'x', 'y']
+                else:
+                    fieldnames = ['id', 'size', 'x', 'y']
+
+                attributes_list = csv.DictReader(csvfile, fieldnames=fieldnames)
+                list_dicts = [dict([k, int(v)] for k, v in d.items())
+                              for d in attributes_list]
+                instances.extend([cls.create(**d) for d in list_dicts])
         except FileNotFoundError:
             pass
         return instances
