@@ -71,6 +71,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """Serializes csv file"""
         filename = f"{cls.__name__}.csv"
 
         with open(filename, 'w', encoding='utf-8', newline='') as csvfile:
@@ -88,6 +89,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """Deserializes csv files"""
         filename = f"{cls.__name__}.csv"
 
         attributes_list = []
