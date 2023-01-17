@@ -58,7 +58,9 @@ class Base:
             with open(filename, "r", encoding="utf-8") as file:
                 for line in file:
                     attributes_list.extend(Base.from_json_string(line))
-            instances.extend([cls.create(**attrs) for attrs in attributes_list])
+            instances.extend(
+                [cls.create(**attrs) for attrs in attributes_list]
+            )
         except FileNotFoundError:
             pass
         return instances
