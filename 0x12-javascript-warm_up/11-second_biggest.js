@@ -6,7 +6,7 @@ if (numOfArgs === 2 || numOfArgs === 3) {
 } else {
   let maximum = Number(process.argv[2]);
   let prevMaximum = 0
-  for (let index = 3; index < numOfArgs; index++) {
+  for (let index = 2; index < numOfArgs; index++) {
     const current = Number(process.argv[index]);
     if (current > maximum) {
       prevMaximum = maximum
