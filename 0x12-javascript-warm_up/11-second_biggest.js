@@ -4,14 +4,8 @@ const numOfArgs = process.argv.length;
 if (numOfArgs === 2 || numOfArgs === 3) {
   console.log(0);
 } else {
-  let maximum = Number(process.argv[2]);
-  let prevMaximum = maximum
-  for (let index = 2; index < numOfArgs; index++) {
-    const current = Number(process.argv[index]);
-    if (current > maximum) {
-      prevMaximum = maximum
-      maximum = current;
-    }
-  }
-  console.log(prevMaximum);
+    const args = process.argv.map(Number)
+    .slice(2, process.argv.length)
+    .sort((a, b) => a - b);
+    console.log(args[args.length - 2])
 }
