@@ -8,14 +8,13 @@ class Square extends Sq {
   }
 
   charPrint (c) {
-    let fmt = 'C';
     let output = '';
     if (c === undefined) {
-      fmt = 'X';
+      this.print();
     }
     for (let y = 0; y < this.height; y++) {
       for (let x = 0; x < this.width; x++) {
-        output += fmt;
+        output += 'C';
       }
       output += '\n';
     }
