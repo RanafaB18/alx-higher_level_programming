@@ -11,15 +11,16 @@ class Square extends Sq {
     let output = '';
     if (c === undefined) {
       this.print();
-    }
-    for (let y = 0; y < this.height; y++) {
-      for (let x = 0; x < this.width; x++) {
-        output += 'C';
+    } else {
+      for (let y = 0; y < this.height; y++) {
+        for (let x = 0; x < this.width; x++) {
+          output += 'C';
+        }
+        output += '\n';
       }
-      output += '\n';
+      output = output.substring(0, output.length - 1);
+      console.log(output);
     }
-    output = output.substring(0, output.length - 1);
-    console.log(output);
   }
 }
 
