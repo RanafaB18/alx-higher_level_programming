@@ -10,7 +10,7 @@ class Square extends Sq {
   charPrint (c) {
     let fmt = 'C';
     let output = '';
-    if (!c) {
+    if (c === undefined) {
       fmt = 'X';
     }
     for (let y = 0; y < this.height; y++) {
