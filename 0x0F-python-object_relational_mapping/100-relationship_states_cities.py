@@ -10,7 +10,7 @@ from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-if __name__ == "__main__":
+if __name__ == "__main__"
     """
     Access to the database and get the cities
     from the database.
